@@ -1,0 +1,14 @@
+{% extends 'comments/base.html' %}
+{% block content %}
+  <a href="{% url 'serv_mon_add' %}" class='btn btn-success'>Form Create </a>
+  <a href="{% url 'pdf_list' %}"class='btn btn-secondary'>PDF_LIST</a>
+  {% for servmonitor in servmonitor_list %}
+    <div class="otakoi">
+      <ul class="list-group">
+        <a href="{{ servmonitor.get_absolute_url }}" class="list-group-item">{{ servmonitor.name }}</a>
+        <li class="list-group-item">{{ servmonitor.email}}</li>
+        <li class="list-group-item">{{ servmonitor.group }}</li>
+      </ul>
+    </div>
+  {% endfor %}
+{% endblock content%}

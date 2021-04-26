@@ -1,0 +1,13 @@
+{% extends 'comments/base.html' %}
+{% block content %}
+  <a href="{% url 'serv_mon_list' %}" class='btn btn-success'>Back to MainPage</a>
+  <a href="{% url 'pdf_create' %}" class='btn btn-danger'>PDF Create</a>
+  {% for pdfmaker in pdfmaker_list %}
+    <div class="otakoi">
+      <ul class="list-group">
+        <a href="{{ pdfmaker.get_absolute_pdf_url }}" class="list-group-item">{{ pdfmaker.name }}</a>
+        <li class="list-group-item">{{ pdfmaker.email}}</li>
+      </ul>
+    </div>
+  {% endfor %}
+{% endblock content%}

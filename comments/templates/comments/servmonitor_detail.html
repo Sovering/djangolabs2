@@ -1,0 +1,15 @@
+{% extends 'comments/base.html' %}
+{% block content %}
+<div class="otakoi">
+  <ul class="list-group">
+    <li class="list-group-item active">{{ servmonitor.name }}</li>
+    <li class="list-group-item">{{ servmonitor.time}}</li>
+    <li class="list-group-item">{{ servmonitor.type }}</li>
+    <li class="list-group-item">{{ servmonitor.email}}</li>
+    <li class="list-group-item">{{ servmonitor.group }}</li>
+    <li class="list-group-item">{{ servmonitor.group_type }}</li>
+    <li class="list-group-item">{{ servmonitor.gps}}</li>
+    <a href="{% url 'serv_mon_download' servmonitor.pk %}" class='btn btn-secondary'>Export</a>
+  </ul>
+</div>
+{% endblock content%}
